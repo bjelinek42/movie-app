@@ -5,7 +5,12 @@ class ActorsController < ApplicationController
   end
 
   def query_actor
-    actor = Actor.find_by(id: params["id"]) || Actor.find_by(first_name: params["name"])
+    actor = Actor.find_by(id: params["id"]) || Actor.find_by(first_name: params["first_name"]) || Actor.find_by(last_name: params["last_name"])
+    render json: actor
+  end
+
+  def segment_actor
+    actor = Actor.find_by(first_name: params["first_name"])
     render json: actor
   end
 end

@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get "/movie" => "movies#show_movie"
 
   get "/actor" => "actors#query_actor"
+
+  get "/actor/:first_name" => "actors#segment_actor"
 end
