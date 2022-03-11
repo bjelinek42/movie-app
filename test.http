@@ -7,4 +7,11 @@ GET http://localhost:3000/actors
 ###
 GET http://localhost:3000/actor?name=Will
 
+###
+POST http://localhost:3000/actor_body
+content-type: application/json
+
+{
+  "first_name": "Will"
+}
 

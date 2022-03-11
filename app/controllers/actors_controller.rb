@@ -13,4 +13,9 @@ class ActorsController < ApplicationController
     actor = Actor.find_by(first_name: params["first_name"])
     render json: actor
   end
+
+  def body_actor
+    actor = Actor.find_by(first_name: params["first_name"])
+    render json: actor
+  end
 end
