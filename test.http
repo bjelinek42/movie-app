@@ -3,3 +3,6 @@ GET http://localhost:3000/movie
 
 ###
 GET http://localhost:3000/actors
+
+###
+GET http://localhost:3000/actor?name=Will

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get "/movies" => "movies#show_all_movies"
 
   get "/movie" => "movies#show_movie"
+
+  get "/actor" => "actors#query_actor"
 end
