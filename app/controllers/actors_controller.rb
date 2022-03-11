@@ -1,5 +1,6 @@
 class ActorsController < ApplicationController
   def show_actor
-    p Actor.first #not sure what is meant by "show single actor based on id", this will show the actor with id: 1
+    actor = Actor.find_by(id: rand(1...17))
+    render json: actor
   end
 end
