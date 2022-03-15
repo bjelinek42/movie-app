@@ -1,21 +1,34 @@
 class ActorsController < ApplicationController
-  def show_actor
-    actor = Actor.find_by(id: rand(1...17))
+  def show
+    actor = Actor.find_by(id: params[:id])
     render json: actor
   end
 
-  def query_actor
-    actor = Actor.find_by(id: params["id"]) || Actor.find_by(first_name: params["first_name"]) || Actor.find_by(last_name: params["last_name"])
+  def index
+    actor = Actor.all
     render json: actor
   end
 
-  def segment_actor
-    actor = Actor.find_by(first_name: params["first_name"])
-    render json: actor
+  def create
+    actor = Actor.new({
+      first_name: params[:first_name], 
+      last_name: params[:last_name],
+      known_for: params[:known_for]
+      })
+      actor.save
   end
 
-  def body_actor
-    actor = Actor.find_by(first_name: params["first_name"])
-    render json: actor
+  def update
+    actor = Actor.find_by(id: params[:id])
+    actor.first_name = params[:first_name]
+    actor.last_name = params[:last_name]
+    actor.known_for = params[:known_for]
+    actor.save
   end
+
+  def destroy
+    actor = Actor.find_by(id: params[:id])
+    actor.delete
+  end
+  
 end

@@ -1,17 +1,29 @@
 ###
-GET http://localhost:3000/movie
-
-###
 GET http://localhost:3000/actors
 
 ###
-GET http://localhost:3000/actor?name=Will
+GET http://localhost:3000/actors/3
 
 ###
-POST http://localhost:3000/actor_body
-content-type: application/json
+POST http://localhost:3000/actors
 
-{
-  "first_name": "Will"
-}
+###
+PATCH http://localhost:3000/actors/3
 
+###
+DELETE http://localhost:3000/actors/
+
+###
+GET http://localhost:3000/movies
+
+###
+GET http://localhost:3000/movies/3
+
+###
+POST http://localhost:3000/movies
+
+###
+PATCH http://localhost:3000/movies/3
+
+###
+DELETE http://localhost:3000/movies/
