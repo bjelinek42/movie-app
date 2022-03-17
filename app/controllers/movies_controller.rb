@@ -13,7 +13,9 @@ class MoviesController < ApplicationController
     movie = Movie.new({
       title: params[:title], 
       year: params[:year],
-      plot: params[:plot]
+      plot: params[:plot],
+      english: params[:english],
+      director: params[:director]
       })
       movie.save
   end
@@ -21,8 +23,10 @@ class MoviesController < ApplicationController
   def update
     movie = Movie.find_by(id: params[:id])
     movie.title = params[:title]
-    movie.year = params[:title]
-    movie.plot = params[:title]
+    movie.year = params[:year]
+    movie.plot = params[:plot]
+    movie.english = params[:english]
+    movie.director = params[:director]
     movie.save
   end
 
