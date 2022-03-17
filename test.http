@@ -9,6 +9,13 @@ POST http://localhost:3000/actors
 
 ###
 PATCH http://localhost:3000/actors/3
+content-type: application/json
+
+{
+  "first_name": "C",
+  "last_name": "D",
+  "age": 12
+}
 
 ###
 DELETE http://localhost:3000/actors/
@@ -27,7 +34,7 @@ PATCH http://localhost:3000/movies/2
 content-type: application/json
 
 {
-  "director": "Joss Whedon",
+  "director": "J",
   "english": true
 }
 

@@ -17,17 +17,25 @@ class ActorsController < ApplicationController
       age: params[:age],
       gender: params[:gender]
       })
-      actor.save
+    if actor.save
+      render json: actor
+    else
+      render json: actor.errors.full_messages
+    end
   end
 
   def update
     actor = Actor.find_by(id: params[:id])
     actor.first_name = params[:first_name]
     actor.last_name = params[:last_name]
-    actor.known_for = params[:known_for]
+    actor.known_for = params[:known_for] || actor.known_for
     actor.age = params[:age]
     actor.gender = params[:gender]
-    actor.save
+    if actor.save
+      render json: actor
+    else
+      render json: actor.errors.full_messages
+    end
   end
 
   def destroy
