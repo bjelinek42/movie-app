@@ -12,7 +12,7 @@ delete "/actors/:id" => "actors#destroy"
 
 get "/movies" => "movies#index"
 post "/movies" => "movies#create"
-get "/movies/:id" => "movies#shot"
+get "/movies/:id" => "movies#show"
 patch "/movies/:id" => "movies#update"
 delete "/movies/:id" => "movies#destroy"
 

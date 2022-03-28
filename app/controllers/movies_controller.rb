@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def show
-    movie = Movie.find_by(id: params[:id])
-    render json: movie
+    @movie = Movie.find_by(id: params[:id])
+    render template: "movies/show"
   end
 
   def index
