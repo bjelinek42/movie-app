@@ -16,4 +16,5 @@ get "/movies/:id" => "movies#shot"
 patch "/movies/:id" => "movies#update"
 delete "/movies/:id" => "movies#destroy"
 
+post "/users" => "users#create"
 end
