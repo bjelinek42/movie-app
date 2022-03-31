@@ -60,3 +60,12 @@ Content-Type: application/json
   "email": "ben@test.com",
   "password": "password"
 }
+
+###
+POST http://localhost:3000/movie_genres
+content-type: application/json
+
+{
+  "movie_id": 14,
+  "genre_id": 1
+}
